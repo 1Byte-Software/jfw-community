@@ -1,0 +1,14 @@
+# Configuration for GitHub Discussions
+categories:
+  - name: "General"
+    description: "General discussions about JFramework"
+    emoji: "💬"
+  - name: "Ideas"
+    description: "Share ideas for JFramework"
+    emoji: "💡"
+  - name: "Q&A"
+    description: "Ask and answer questions"
+    emoji: "❓"
+  - name: "Announcements"
+    description: "Official announcements from the JFramework team"
+    emoji: "📢"
