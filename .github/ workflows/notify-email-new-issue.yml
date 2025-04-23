@@ -1,0 +1,44 @@
+name: Notify via Email on New Issue
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  send_email:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send email with Python and SMTP
+        run: |
+          python3 - <<EOF
+          import smtplib
+          from email.mime.text import MIMEText
+
+          smtp_host = "${{ secrets.SMTP_HOST }}"
+          smtp_port = int("${{ secrets.SMTP_PORT }}")
+          smtp_user = "${{ secrets.SMTP_USER }}"
+          smtp_pass = "${{ secrets.SMTP_PASS }}"
+
+          subject = "[JFW] New Issue: ${{ github.event.issue.title }}"
+          body = f'''
+          A new issue has been opened.
+
+          Title: ${{ github.event.issue.title }}
+          URL: ${{ github.event.issue.html_url }}
+          Description: ${{ github.event.issue.body }}
+          '''
+
+          msg = MIMEText(body)
+          msg['Subject'] = subject
+          msg['From'] = smtp_user
+          msg['To'] = "sang.pham@1bytesoftware.com"
+          msg['Cc'] = "mrsteve.bang@gmail.com"
+
+          recipients = ["sang.pham@1bytesoftware.com", "mrsteve.bang@gmail.com"]
+
+          with smtplib.SMTP(smtp_host, smtp_port) as server:
+              server.starttls()
+              server.login(smtp_user, smtp_pass)
+              server.sendmail(smtp_user, recipients, msg.as_string())
+          EOF
