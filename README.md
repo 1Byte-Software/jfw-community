@@ -1,6 +1,6 @@
-# JFramework Community
+# Jframework Community
 
-Welcome to the official community forum for JFramework! This is a place where users can ask questions, share knowledge, and discuss all things related to JFramework.
+Welcome to the official community forum for Jframework! This is a place where users can ask questions, share knowledge, and discuss all things related to Jframework.
 
 ## Resources
 
@@ -18,7 +18,7 @@ Welcome to the official community forum for JFramework! This is a place where us
 ## Community Guidelines
 
 - Be respectful and inclusive
-- Stay on topic with JFramework-related discussions
+- Stay on topic with Jframework-related discussions
 - Search before posting to avoid duplicates
 - Use clear, descriptive titles for issues
 - Provide as much detail as possible when asking questions
@@ -41,4 +41,4 @@ We welcome contributions from the community! Please see our [developer documenta
 
 ---
 
-Thank you for being part of the JFramework community! 🚀
+Thank you for being part of the Jframework community! 🚀
